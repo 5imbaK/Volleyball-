@@ -1,0 +1,57 @@
+/* Basic styling for the dashboard */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #FAF9F6;
+    color: #f76540;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #f76540;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #f76540;
+    text-decoration: underline;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.welcome-header {
+    padding-top: 30px;
+    margin: 20px;
+}
+
+.dashboard {
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-component {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+
+.card-header {
+    margin-bottom: 5px;
+}
+
+.card-text {
+    margin-top: 0;
+}
