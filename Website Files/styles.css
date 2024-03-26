@@ -55,3 +55,66 @@ nav a:hover {
 .card-text {
     margin-top: 0;
 }
+
+
+/*Create Practice Plan*/
+
+.practice-line-container {
+    position: relative !important;
+    border: 1px solid #ccc !important;
+    padding: 10px !important;
+    margin: 0px 20px 10px !important;
+}
+
+.practice-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.column {
+    flex: 1 1 20% !important;
+    /* Adjust the width as needed */
+}
+
+.label {
+    font-weight: bold !important;
+}
+
+.value {
+    margin-left: 5px !important;
+}
+
+.line {
+    margin: 10px 20px !important;
+}
+
+.edit-image {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.edit-icon {
+    position: absolute !important;
+    bottom: 25px !important;
+    right: 75px !important;
+}
+
+.save-icon {
+    position: absolute !important;
+    bottom: 25px !important;
+    right: 25px !important;
+}
+
+.add-icon {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+    /* Adjust spacing as needed */
+}
+
+.add-icon img {
+    width: 30px;
+    /* Adjust icon size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+}
