@@ -3,8 +3,8 @@ import boto3
 import os
 
 os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'
-os.environ['AWS_SECRET_ACCESS_KEY'] = 'SlWltRDg+Nal59TIgc7Fs+dko54cve5WSJ9iLDJW'
-os.environ['AWS_ACCESS_KEY_ID'] = 'AKIA3FLDYCJ24FAKUIXD'
+os.environ['AWS_SECRET_ACCESS_KEY'] = #removed for privacy
+os.environ['AWS_ACCESS_KEY_ID'] = #removed for privacy
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('tempor')
