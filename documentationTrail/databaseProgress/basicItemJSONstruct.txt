@@ -1,0 +1,38 @@
+{
+  "Drill Name": {
+    "S": ""
+  },
+  "Category": {
+    "S": ""
+  },
+  "Level": {
+    "S": ""
+  },
+  "Player Count": {
+    "S": ""
+  },
+  "Duration": {
+    "S": ""
+  },
+  "Focus": {
+    "S": ""
+  },
+  "Description": {
+    "S": ""
+  },
+  "Scoring": {
+    "S": ""
+  },
+  "Behaviors": {
+    "S": ""
+  },
+  "Variations": {
+    "S": ""
+  },
+  "Tags": {
+    "S": ""
+  },
+  "Step by Step": {
+    "S": ""
+  }
+}

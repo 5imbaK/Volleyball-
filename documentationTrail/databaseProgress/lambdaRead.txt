@@ -1,0 +1,47 @@
+import json
+import boto3
+from botocore.exceptions import ClientError
+from boto3.dynamodb.conditions import Key
+
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+def lambda_handler(event, context):
+    logger.info("Received evenet: %s", event)
+    
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Matrix')
+
+    sort_key_value = event['sort_key_value']
+
+    try:
+        response = table.query(
+            IndexName='catIndex',
+            KeyConditionExpression=Key('Category').eq(sort_key_value)
+        )
+        
+        items = response['Items']
+        
+        # Continue to fetch data as long as there are more items
+        while 'LastEvaluatedKey' in response:
+            response = table.query(
+                IndexName='catIndex',
+                KeyConditionExpression=Key('Category').eq(sort_key_value),
+                ExclusiveStartKey=response['LastEvaluatedKey']
+            )
+            items += response['Items']
+
+        return {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": json.dumps({
+                "items": items
+            })
+        }
+
+    except ClientError as e:
+        print(e.response['Error']['Message'])
+        return None
