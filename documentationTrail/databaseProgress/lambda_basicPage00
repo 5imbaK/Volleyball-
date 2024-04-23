@@ -1,0 +1,33 @@
+#First attempt to invoke lambda from a local html page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda Response Example</title>
+</head>
+<body>
+    <h1>Display Lambda Response</h1>
+    <div id="output"></div>
+
+    <script>
+        // Replace 'your-lambda-function-name' with your actual Lambda function name
+        const lambdaFunctionName = 'listDrillsTest';
+
+        // Invoke your Lambda function using fetch
+        fetch(`https://ia2dsw55swlzpyas4cpowfkhdi0rjrws.lambda-url.us-east-1.on.aws/`, {
+            method: 'POST',
+            body: JSON.stringify({ search: 'paint protection film filter:safe' })
+        })
+        .then(response => response.text()) // Use response.text() for HTML content
+        .then(htmlContent => {
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = htmlContent; // Set the HTML content
+        })
+        .catch(error => {
+            console.error('Error invoking Lambda:', error);
+        });
+    </script>
+</body>
+</html>
